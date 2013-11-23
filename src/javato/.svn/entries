@@ -1,0 +1,41 @@
+9
+
+dir
+1601
+svn+ssh://srl.cs.berkeley.edu/projects/calfuzzer/src/javato
+svn+ssh://srl.cs.berkeley.edu/projects
+
+
+
+2009-02-23T16:42:32.487765Z
+1600
+ksen
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+87e6b42e-1434-0410-a6c3-37841a2aa69a
+
+
+
+
+
+
+0
+
+activetesting
+dir
+
+instrumentor
+dir
+

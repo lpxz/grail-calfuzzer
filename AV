@@ -1,0 +1,185 @@
+Buildfile: /home/lpxz/eclipse/workspacegrail/pecan/pecan-monitor/build.xml
+run:
+     [java] Picked up JAVA_TOOL_OPTIONS: -Dfile.encoding=UTF8
+     [java] hello
+     [java] hello
+     [java] hello
+     [java] hello
+     [java] hello
+     [java] hello
+     [java] come here!!!
+     [java] Monitoring time: 186 ms
+     [java] save trace to path: /home/lpxz/eclipse/workspacegrail/pecan/pecan-monitor/tmp/traceHashSet
+     [java] Save monitordata to /home/lpxz/eclipse/workspacegrail/pecan/pecan-monitor/tmp/traceHashSet
+     [java] Picked up JAVA_TOOL_OPTIONS: -Dfile.encoding=UTF8
+     [java] load from trace from: /home/lpxz/eclipse/workspacegrail/pecan/pecan-monitor/tmp/traceHashSet
+     [java] read edu.hkust.clap.monitor.MonitorData@48e206ff
+     [java] --------------------------------------
+     [java] *** Violation Patterns [ID - Memory Location - Line Number - Thread - Access Type] ***
+     [java] total bugs: 44
+     [java] , and among these bugs, the total aset violations: 41
+     [java] -f J -p jb use-original-names:false -pp -cp .:/home/lpxz/pool/jdk1.6.0_13/jre/lib/jsse.jar benchmarks.instrumented.java.util.HashMap benchmarks.instrumented.java.util.HashMap$KeyIterator benchmarks.instrumented.java.util.HashMap$HashIterator benchmarks.dstest.MTSetTest benchmarks.instrumented.java.util.HashSet benchmarks.instrumented.java.util.AbstractCollection benchmarks.instrumented.java.util.Collections$SynchronizedCollection benchmarks.instrumented.java.util.AbstractSet
+     [java] pattern I: 
+     [java] ==short version==
+     [java] READ Thread:9 Field:keySet
+     [java] WRITE Thread:9 Field:keySet
+     [java] WRITE Thread:14 Field:keySet
+     [java] ===end===
+     [java] =============long version=============
+     [java] READ Thread:9 Field:keySet 
+     [java] LineNo=856: r1 = r0.<benchmarks.instrumented.java.util.HashMap: benchmarks.instrumented.java.util.Set keySet>
+     [java] msig:<benchmarks.instrumented.java.util.HashMap: benchmarks.instrumented.java.util.Set keySet()>
+     [java] ctxt:
+     [java] benchmarks.instrumented.java.util.HashMap.keySet()(HashMap.java)
+     [java] benchmarks.instrumented.java.util.HashSet.iterator()(HashSet.java:152)
+     [java] benchmarks.instrumented.java.util.AbstractSet.removeAll(benchmarks.instrumented.java.util.Collection)(AbstractSet.java:144)
+     [java] benchmarks.instrumented.java.util.Collections$SynchronizedCollection.removeAll(benchmarks.instrumented.java.util.Collection)(Collections.java:1572)
+     [java] benchmarks.dstest.MTSetTest.run()(MTSetTest.java:64)
+     [java] WRITE Thread:9 Field:keySet 
+     [java] LineNo=857: r0.<benchmarks.instrumented.java.util.HashMap: benchmarks.instrumented.java.util.Set keySet> = $r2
+     [java] msig:<benchmarks.instrumented.java.util.HashMap: benchmarks.instrumented.java.util.Set keySet()>
+     [java] ctxt:
+     [java] benchmarks.instrumented.java.util.HashMap.keySet()(HashMap.java)
+     [java] benchmarks.instrumented.java.util.HashSet.iterator()(HashSet.java:152)
+     [java] benchmarks.instrumented.java.util.AbstractSet.removeAll(benchmarks.instrumented.java.util.Collection)(AbstractSet.java:144)
+     [java] benchmarks.instrumented.java.util.Collections$SynchronizedCollection.removeAll(benchmarks.instrumented.java.util.Collection)(Collections.java:1572)
+     [java] benchmarks.dstest.MTSetTest.run()(MTSetTest.java:64)
+     [java] WRITE Thread:14 Field:keySet 
+     [java] LineNo=857: r0.<benchmarks.instrumented.java.util.HashMap: benchmarks.instrumented.java.util.Set keySet> = $r2
+     [java] msig:<benchmarks.instrumented.java.util.HashMap: benchmarks.instrumented.java.util.Set keySet()>
+     [java] ctxt:
+     [java] benchmarks.instrumented.java.util.HashMap.keySet()(HashMap.java)
+     [java] benchmarks.instrumented.java.util.HashSet.iterator()(HashSet.java:152)
+     [java] benchmarks.instrumented.java.util.Collections$SynchronizedCollection.iterator()(Collections.java:1555)
+     [java] benchmarks.dstest.MTSetTest.run()(MTSetTest.java:49)
+     [java] ==============end=====================
+     [java] pattern: 21
+     [java] p context
+     [java] <benchmarks.dstest.MTSetTest: void run()>called at specialinvoke placeholder.<benchmarks.dstest.MTSetTest: void run()>()
+     [java] <benchmarks.instrumented.java.util.Collections$SynchronizedCollection: boolean removeAll(benchmarks.instrumented.java.util.Collection)>called at interfaceinvoke $r22.<benchmarks.instrumented.java.util.Set: boolean removeAll(benchmarks.instrumented.java.util.Collection)>($r23)
+     [java] <benchmarks.instrumented.java.util.AbstractSet: boolean removeAll(benchmarks.instrumented.java.util.Collection)>called at z0 = interfaceinvoke $r5.<benchmarks.instrumented.java.util.Collection: boolean removeAll(benchmarks.instrumented.java.util.Collection)>(r1)
+     [java] <benchmarks.instrumented.java.util.HashSet: benchmarks.instrumented.java.util.Iterator iterator()>called at r5 = virtualinvoke r0.<benchmarks.instrumented.java.util.AbstractSet: benchmarks.instrumented.java.util.Iterator iterator()>()
+     [java] <benchmarks.instrumented.java.util.HashMap: benchmarks.instrumented.java.util.Set keySet()>called at $r3 = virtualinvoke $r2.<benchmarks.instrumented.java.util.HashMap: benchmarks.instrumented.java.util.Set keySet()>()
+     [java] c context
+     [java] <benchmarks.dstest.MTSetTest: void run()>called at specialinvoke placeholder.<benchmarks.dstest.MTSetTest: void run()>()
+     [java] <benchmarks.instrumented.java.util.Collections$SynchronizedCollection: boolean removeAll(benchmarks.instrumented.java.util.Collection)>called at interfaceinvoke $r22.<benchmarks.instrumented.java.util.Set: boolean removeAll(benchmarks.instrumented.java.util.Collection)>($r23)
+     [java] <benchmarks.instrumented.java.util.AbstractSet: boolean removeAll(benchmarks.instrumented.java.util.Collection)>called at z0 = interfaceinvoke $r5.<benchmarks.instrumented.java.util.Collection: boolean removeAll(benchmarks.instrumented.java.util.Collection)>(r1)
+     [java] <benchmarks.instrumented.java.util.HashSet: benchmarks.instrumented.java.util.Iterator iterator()>called at r5 = virtualinvoke r0.<benchmarks.instrumented.java.util.AbstractSet: benchmarks.instrumented.java.util.Iterator iterator()>()
+     [java] <benchmarks.instrumented.java.util.HashMap: benchmarks.instrumented.java.util.Set keySet()>called at $r3 = virtualinvoke $r2.<benchmarks.instrumented.java.util.HashMap: benchmarks.instrumented.java.util.Set keySet()>()
+     [java] pcMsig:<benchmarks.instrumented.java.util.HashMap: benchmarks.instrumented.java.util.Set keySet()>
+     [java] p:r1 = r0.<benchmarks.instrumented.java.util.HashMap: benchmarks.instrumented.java.util.Set keySet>
+     [java] c:r0.<benchmarks.instrumented.java.util.HashMap: benchmarks.instrumented.java.util.Set keySet> = $r2
+     [java] pattern I: 
+     [java] ==short version==
+     [java] READ Thread:13 Field:modCount
+     [java] READ Thread:13 Field:modCount
+     [java] WRITE Thread:29 Field:modCount
+     [java] ===end===
+     [java] =============long version=============
+     [java] READ Thread:13 Field:modCount 
+     [java] LineNo=781: $i1 = $r5.<benchmarks.instrumented.java.util.HashMap: int modCount>
+     [java] msig:<benchmarks.instrumented.java.util.HashMap$HashIterator: benchmarks.instrumented.java.util.HashMap$Entry nextEntry()>
+     [java] ctxt:
+     [java] benchmarks.instrumented.java.util.HashMap$HashIterator.nextEntry()(HashMap.java)
+     [java] benchmarks.instrumented.java.util.HashMap$KeyIterator.next()(HashMap.java:818)
+     [java] benchmarks.instrumented.java.util.AbstractCollection.addAll(benchmarks.instrumented.java.util.Collection)(AbstractCollection.java:320)
+     [java] benchmarks.instrumented.java.util.Collections$SynchronizedCollection.addAll(benchmarks.instrumented.java.util.Collection)(Collections.java:1569)
+     [java] benchmarks.dstest.MTSetTest.run()(MTSetTest.java:52)
+     [java] READ Thread:13 Field:modCount 
+     [java] LineNo=781: $i1 = $r5.<benchmarks.instrumented.java.util.HashMap: int modCount>
+     [java] msig:<benchmarks.instrumented.java.util.HashMap$HashIterator: benchmarks.instrumented.java.util.HashMap$Entry nextEntry()>
+     [java] ctxt:
+     [java] benchmarks.instrumented.java.util.HashMap$HashIterator.nextEntry()(HashMap.java)
+     [java] benchmarks.instrumented.java.util.HashMap$KeyIterator.next()(HashMap.java:818)
+     [java] benchmarks.instrumented.java.util.AbstractCollection.addAll(benchmarks.instrumented.java.util.Collection)(AbstractCollection.java:320)
+     [java] benchmarks.instrumented.java.util.Collections$SynchronizedCollection.addAll(benchmarks.instrumented.java.util.Collection)(Collections.java:1569)
+     [java] benchmarks.dstest.MTSetTest.run()(MTSetTest.java:52)
+     [java] WRITE Thread:29 Field:modCount 
+     [java] LineNo=391: r0.<benchmarks.instrumented.java.util.HashMap: int modCount> = $i5
+     [java] msig:<benchmarks.instrumented.java.util.HashMap: java.lang.Object put(java.lang.Object,java.lang.Object)>
+     [java] ctxt:
+     [java] benchmarks.instrumented.java.util.HashMap.put(java.lang.Object,java.lang.Object)(HashMap.java)
+     [java] benchmarks.instrumented.java.util.HashSet.add(java.lang.Object)(HashSet.java:192)
+     [java] benchmarks.instrumented.java.util.Collections$SynchronizedCollection.add(java.lang.Object)(Collections.java:1559)
+     [java] benchmarks.dstest.MTSetTest.run()(MTSetTest.java:28)
+     [java] ==============end=====================
+     [java] pattern: 31
+     [java] p context
+     [java] <benchmarks.dstest.MTSetTest: void run()>called at specialinvoke placeholder.<benchmarks.dstest.MTSetTest: void run()>()
+     [java] <benchmarks.instrumented.java.util.Collections$SynchronizedCollection: boolean addAll(benchmarks.instrumented.java.util.Collection)>called at interfaceinvoke $r14.<benchmarks.instrumented.java.util.Set: boolean addAll(benchmarks.instrumented.java.util.Collection)>($r15)
+     [java] <benchmarks.instrumented.java.util.AbstractCollection: boolean addAll(benchmarks.instrumented.java.util.Collection)>called at z0 = interfaceinvoke $r5.<benchmarks.instrumented.java.util.Collection: boolean addAll(benchmarks.instrumented.java.util.Collection)>(r1)
+     [java] <benchmarks.instrumented.java.util.HashMap$KeyIterator: java.lang.Object next()>called at $r4 = interfaceinvoke r3.<benchmarks.instrumented.java.util.Iterator: java.lang.Object next()>()
+     [java] <benchmarks.instrumented.java.util.HashMap$HashIterator: benchmarks.instrumented.java.util.HashMap$Entry nextEntry()>called at $r2 = virtualinvoke r0.<benchmarks.instrumented.java.util.HashMap$KeyIterator: benchmarks.instrumented.java.util.HashMap$Entry nextEntry()>()
+     [java] c context
+     [java] <benchmarks.dstest.MTSetTest: void run()>called at specialinvoke placeholder.<benchmarks.dstest.MTSetTest: void run()>()
+     [java] <benchmarks.instrumented.java.util.Collections$SynchronizedCollection: boolean addAll(benchmarks.instrumented.java.util.Collection)>called at interfaceinvoke $r14.<benchmarks.instrumented.java.util.Set: boolean addAll(benchmarks.instrumented.java.util.Collection)>($r15)
+     [java] <benchmarks.instrumented.java.util.AbstractCollection: boolean addAll(benchmarks.instrumented.java.util.Collection)>called at z0 = interfaceinvoke $r5.<benchmarks.instrumented.java.util.Collection: boolean addAll(benchmarks.instrumented.java.util.Collection)>(r1)
+     [java] <benchmarks.instrumented.java.util.HashMap$KeyIterator: java.lang.Object next()>called at $r4 = interfaceinvoke r3.<benchmarks.instrumented.java.util.Iterator: java.lang.Object next()>()
+     [java] <benchmarks.instrumented.java.util.HashMap$HashIterator: benchmarks.instrumented.java.util.HashMap$Entry nextEntry()>called at $r2 = virtualinvoke r0.<benchmarks.instrumented.java.util.HashMap$KeyIterator: benchmarks.instrumented.java.util.HashMap$Entry nextEntry()>()
+     [java] pcMsig:<benchmarks.instrumented.java.util.HashMap$HashIterator: benchmarks.instrumented.java.util.HashMap$Entry nextEntry()>
+     [java] p:$i1 = $r5.<benchmarks.instrumented.java.util.HashMap: int modCount>
+     [java] c:$i1 = $r5.<benchmarks.instrumented.java.util.HashMap: int modCount>
+     [java] pattern I: 
+     [java] ==short version==
+     [java] READ Thread:13 Field:modCount
+     [java] READ Thread:13 Field:modCount
+     [java] WRITE Thread:27 Field:modCount
+     [java] ===end===
+     [java] =============long version=============
+     [java] READ Thread:13 Field:modCount 
+     [java] LineNo=781: $i1 = $r5.<benchmarks.instrumented.java.util.HashMap: int modCount>
+     [java] msig:<benchmarks.instrumented.java.util.HashMap$HashIterator: benchmarks.instrumented.java.util.HashMap$Entry nextEntry()>
+     [java] ctxt:
+     [java] benchmarks.instrumented.java.util.HashMap$HashIterator.nextEntry()(HashMap.java)
+     [java] benchmarks.instrumented.java.util.HashMap$KeyIterator.next()(HashMap.java:818)
+     [java] benchmarks.instrumented.java.util.AbstractCollection.addAll(benchmarks.instrumented.java.util.Collection)(AbstractCollection.java:320)
+     [java] benchmarks.instrumented.java.util.Collections$SynchronizedCollection.addAll(benchmarks.instrumented.java.util.Collection)(Collections.java:1569)
+     [java] benchmarks.dstest.MTSetTest.run()(MTSetTest.java:52)
+     [java] READ Thread:13 Field:modCount 
+     [java] LineNo=781: $i1 = $r5.<benchmarks.instrumented.java.util.HashMap: int modCount>
+     [java] msig:<benchmarks.instrumented.java.util.HashMap$HashIterator: benchmarks.instrumented.java.util.HashMap$Entry nextEntry()>
+     [java] ctxt:
+     [java] benchmarks.instrumented.java.util.HashMap$HashIterator.nextEntry()(HashMap.java)
+     [java] benchmarks.instrumented.java.util.HashMap$KeyIterator.next()(HashMap.java:818)
+     [java] benchmarks.instrumented.java.util.AbstractCollection.addAll(benchmarks.instrumented.java.util.Collection)(AbstractCollection.java:320)
+     [java] benchmarks.instrumented.java.util.Collections$SynchronizedCollection.addAll(benchmarks.instrumented.java.util.Collection)(Collections.java:1569)
+     [java] benchmarks.dstest.MTSetTest.run()(MTSetTest.java:52)
+     [java] WRITE Thread:27 Field:modCount 
+     [java] LineNo=599: r0.<benchmarks.instrumented.java.util.HashMap: int modCount> = $i2
+     [java] msig:<benchmarks.instrumented.java.util.HashMap: void clear()>
+     [java] ctxt:
+     [java] benchmarks.instrumented.java.util.HashMap.clear()(HashMap.java)
+     [java] benchmarks.instrumented.java.util.HashSet.clear()(HashSet.java:209)
+     [java] benchmarks.instrumented.java.util.Collections$SynchronizedCollection.clear()(Collections.java:1578)
+     [java] benchmarks.dstest.MTSetTest.run()(MTSetTest.java:34)
+     [java] ==============end=====================
+     [java] pattern: 32
+     [java] p context
+     [java] <benchmarks.dstest.MTSetTest: void run()>called at specialinvoke placeholder.<benchmarks.dstest.MTSetTest: void run()>()
+     [java] <benchmarks.instrumented.java.util.Collections$SynchronizedCollection: boolean addAll(benchmarks.instrumented.java.util.Collection)>called at interfaceinvoke $r14.<benchmarks.instrumented.java.util.Set: boolean addAll(benchmarks.instrumented.java.util.Collection)>($r15)
+     [java] <benchmarks.instrumented.java.util.AbstractCollection: boolean addAll(benchmarks.instrumented.java.util.Collection)>called at z0 = interfaceinvoke $r5.<benchmarks.instrumented.java.util.Collection: boolean addAll(benchmarks.instrumented.java.util.Collection)>(r1)
+     [java] <benchmarks.instrumented.java.util.HashMap$KeyIterator: java.lang.Object next()>called at $r4 = interfaceinvoke r3.<benchmarks.instrumented.java.util.Iterator: java.lang.Object next()>()
+     [java] <benchmarks.instrumented.java.util.HashMap$HashIterator: benchmarks.instrumented.java.util.HashMap$Entry nextEntry()>called at $r2 = virtualinvoke r0.<benchmarks.instrumented.java.util.HashMap$KeyIterator: benchmarks.instrumented.java.util.HashMap$Entry nextEntry()>()
+     [java] c context
+     [java] <benchmarks.dstest.MTSetTest: void run()>called at specialinvoke placeholder.<benchmarks.dstest.MTSetTest: void run()>()
+     [java] <benchmarks.instrumented.java.util.Collections$SynchronizedCollection: boolean addAll(benchmarks.instrumented.java.util.Collection)>called at interfaceinvoke $r14.<benchmarks.instrumented.java.util.Set: boolean addAll(benchmarks.instrumented.java.util.Collection)>($r15)
+     [java] <benchmarks.instrumented.java.util.AbstractCollection: boolean addAll(benchmarks.instrumented.java.util.Collection)>called at z0 = interfaceinvoke $r5.<benchmarks.instrumented.java.util.Collection: boolean addAll(benchmarks.instrumented.java.util.Collection)>(r1)
+     [java] <benchmarks.instrumented.java.util.HashMap$KeyIterator: java.lang.Object next()>called at $r4 = interfaceinvoke r3.<benchmarks.instrumented.java.util.Iterator: java.lang.Object next()>()
+     [java] <benchmarks.instrumented.java.util.HashMap$HashIterator: benchmarks.instrumented.java.util.HashMap$Entry nextEntry()>called at $r2 = virtualinvoke r0.<benchmarks.instrumented.java.util.HashMap$KeyIterator: benchmarks.instrumented.java.util.HashMap$Entry nextEntry()>()
+     [java] pcMsig:<benchmarks.instrumented.java.util.HashMap$HashIterator: benchmarks.instrumented.java.util.HashMap$Entry nextEntry()>
+     [java] p:$i1 = $r5.<benchmarks.instrumented.java.util.HashMap: int modCount>
+     [java] c:$i1 = $r5.<benchmarks.instrumented.java.util.HashMap: int modCount>
+     [java] write the CSPairs to :/home/lpxz/eclipse/workspacegrail/pecan/pecan-monitor/tmp/CSMethodPairListHashSet
+     [java] total time (msec): 3224
+     [java] -------------------------------------
+     [java] Number of Threads: 22
+     [java] Number of Shared Variables: 7
+     [java] Number of Lock Nodes: 66
+     [java] Number of Message Nodes: 63
+     [java] Number of Non-Method Entry/Exit Nodes: 474
+     [java] Number of Read/Write Nodes: 345
+     [java] Number of Total Nodes: 474
+     [java] Number of BUGS (no contexts): 3
+     [java] Number of BUGS: 3
+BUILD SUCCESSFUL
+Total time: 5 seconds
